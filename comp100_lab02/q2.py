@@ -1,30 +1,39 @@
 def draw(i):
-    spaces = ""
+    s = ""
     k = 1
     while k < i:
-        spaces = spaces + "  "
-        k = k + 1
-    return spaces + str(i)
-def make_wave(n, h):
-    res = ""
+        s += " "
+        k += 1
+    return s + str(i)
+
+
+def makeWave(n, h):
+    result = ""   
     if n == 1:
         line = 0
         while line < h:
-            if res != "":
-                res = res + "\n"
-            res = res + draw(1)
-            line = line + 1
-        return res
+            if result != "":
+                result += "\n"
+            result += draw(1)
+            line += 1
+        return result
+
     cycle = n * 2 - 2
     line = 0
+
     while line < h:
         pos = line % cycle
         if pos < n:
-            level = pos + 1
+            lvl = pos + 1
         else:
-            level = cycle - pos + 1
-        if res != "":
-            res = res + "\n"
-        res = res + draw(level)
-        line = line + 1
-    return res
+            lvl = cycle - pos + 1
+
+        if result != "":
+            result += "\n"
+
+        result += draw(lvl)
+        line += 1
+
+    return result
+    
+      
