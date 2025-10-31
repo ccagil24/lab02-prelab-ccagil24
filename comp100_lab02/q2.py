@@ -7,7 +7,7 @@ def draw(i):
     return s + str(i)
 
 
-def makeWave(n, h):
+def make_Wave(n, h):
     result = ""   
     if n == 1:
         line = 0
